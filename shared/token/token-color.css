@@ -1,0 +1,155 @@
+/*
+  MEA ECOSYSTEM — DESIGN TOKENS
+  ==============================
+  File ini adalah SUMBER TUNGGAL untuk semua warna di seluruh produk
+  MEA Ecosystem (Hub, Study, Pay, Console, Siesta, Landing, dll).
+
+  TEMA: Dark mode adalah DEFAULT dan utama. Light mode tersedia sebagai
+  opsi tambahan lewat atribut data-theme="light" di elemen <html>.
+  Contoh: <html data-theme="light"> ... </html>
+  Tidak perlu file CSS terpisah — cukup toggle atribut ini via JS.
+
+  ATURAN WAJIB:
+  1. Jangan pernah menulis kode warna hex secara langsung di file CSS produk.
+  2. Semua warna HARUS diambil dari variable di file ini (var(--mea-...)).
+  3. Kalau butuh warna yang belum ada di sini, JANGAN membuat sendiri.
+     Ajukan dulu ke pemilik design system (Kudo), lalu tambahkan resmi
+     ke file ini supaya semua produk konsisten.
+  4. File ini di-import sekali di root/global CSS tiap produk.
+
+  Lihat README.md di folder yang sama untuk penjelasan lengkap
+  kapan menggunakan token yang mana.
+*/
+
+:root {
+
+  /* ============================================
+     1. BASE — Netral / Struktural
+     Dipakai untuk latar, permukaan, border, teks.
+     Ini adalah 90% dari seluruh warna di UI.
+     ============================================ */
+
+  --mea-bg:              #0A0A0A;  /* Latar belakang utama halaman (body) */
+  --mea-surface:         #161616;  /* Card, panel, navbar, sidebar, modal */
+  --mea-surface-raised:  #1E1E1E;  /* Elemen di atas surface (dropdown, popover, tooltip) */
+  --mea-border:          #2A2A2A;  /* Garis pemisah, outline card, divider */
+  --mea-border-strong:   #3A3A3A;  /* Border saat hover / focus / lebih tegas */
+
+  --mea-text-primary:    #FAFAFA;  /* Heading, isi penting, label utama */
+  --mea-text-secondary:  #A1A1A1;  /* Subtitle, deskripsi, teks pendukung */
+  --mea-text-muted:      #6B6B6B;  /* Placeholder, teks nonaktif, caption kecil */
+  --mea-text-disabled:   #4A4A4A;  /* Teks pada elemen disabled */
+
+
+  /* ============================================
+     2. AKSEN BRAND — Interaktif
+     HANYA untuk elemen yang bisa diklik / aktif:
+     tombol utama, link, item terpilih, focus ring.
+     Jangan dipakai untuk dekorasi atau background besar.
+     ============================================ */
+
+  --mea-accent:          #3B82F6;  /* Tombol utama, link, item aktif */
+  --mea-accent-hover:    #2563EB;  /* State hover dari accent */
+  --mea-accent-muted:    rgba(59, 130, 246, 0.12);  /* Background tipis untuk highlight aksen (mis. badge terpilih) */
+  --mea-accent-text:     #93C5FD;  /* Teks di atas background gelap yang perlu terasa "aktif" */
+
+
+  /* ============================================
+     3. STATUS / SEMANTIK — Fungsional
+     Warna ini BUKAN pilihan estetika, tapi menyampaikan
+     makna: berhasil, gagal, menunggu, informasi.
+     Selalu gunakan pasangan {warna}-text dan {warna}-bg
+     yang sudah disediakan, jangan mencampur sendiri.
+     ============================================ */
+
+  /* Error / gagal / destruktif */
+  --mea-danger:          #EF4444;
+  --mea-danger-text:     #F87171;
+  --mea-danger-bg:       rgba(239, 68, 68, 0.12);  /* Background tipis untuk banner/alert error */
+  --mea-danger-border:   #7F1D1D;
+
+  /* Sukses / berhasil / selesai */
+  --mea-success:         #22C55E;
+  --mea-success-text:    #4ADE80;
+  --mea-success-bg:      rgba(34, 197, 94, 0.12);
+  --mea-success-border:  #14532D;
+
+  /* Peringatan / menunggu / perlu perhatian */
+  --mea-warning:         #EAB308;
+  --mea-warning-text:    #FACC15;
+  --mea-warning-bg:      rgba(234, 179, 8, 0.12);
+  --mea-warning-border:  #713F12;
+
+  /* Informasi netral (bukan brand, bukan error) */
+  --mea-info:            #60A5FA;
+  --mea-info-text:       #93C5FD;
+  --mea-info-bg:         rgba(96, 165, 250, 0.12);
+  --mea-info-border:     #1E3A5F;
+
+
+  /* ============================================
+     4. RADIUS & SHADOW (opsional, bukan warna,
+     tapi disatukan di sini biar 1 sumber kebenaran)
+     ============================================ */
+
+  --mea-radius-sm:  6px;
+  --mea-radius-md:  8px;
+  --mea-radius-lg:  12px;
+
+}
+
+
+/*
+  ============================================
+  LIGHT MODE (opsional)
+  ============================================
+  Diaktifkan dengan menambahkan data-theme="light" pada <html>.
+  Hanya override token BASE dan AKSEN yang perlu berubah tampilan.
+  Struktur nama token tetap sama — kode produk tidak perlu diubah
+  sama sekali saat berpindah tema, karena tetap memanggil
+  var(--mea-bg), var(--mea-surface), dst.
+
+  Status/semantik (danger, success, warning, info) sengaja TIDAK
+  diubah drastis — hanya bg dan border-nya disesuaikan supaya tetap
+  kontras di atas latar terang. Warna solid-nya tetap sama agar makna
+  tetap konsisten dilihat dari tema mana pun.
+*/
+
+[data-theme="light"] {
+
+  /* 1. BASE */
+  --mea-bg:              #FFFFFF;
+  --mea-surface:         #F5F5F5;
+  --mea-surface-raised:  #FFFFFF;
+  --mea-border:          #E2E2E2;
+  --mea-border-strong:   #CACACA;
+
+  --mea-text-primary:    #171717;
+  --mea-text-secondary:  #5A5A5A;
+  --mea-text-muted:      #8C8C8C;
+  --mea-text-disabled:   #B5B5B5;
+
+  /* 2. AKSEN BRAND */
+  --mea-accent:          #2563EB;
+  --mea-accent-hover:    #1D4ED8;
+  --mea-accent-muted:    #DBEAFE;
+  --mea-accent-text:     #1D4ED8;
+
+  /* 3. STATUS / SEMANTIK — bg dan border disesuaikan untuk latar terang */
+  --mea-danger-bg:       #FEF2F2;
+  --mea-danger-border:   #FECACA;
+  --mea-danger-text:     #B91C1C;
+
+  --mea-success-bg:      #F0FDF4;
+  --mea-success-border:  #BBF7D0;
+  --mea-success-text:    #15803D;
+
+  --mea-warning-bg:      #FEFCE8;
+  --mea-warning-border:  #FEF08A;
+  --mea-warning-text:    #A16207;
+
+  --mea-info-bg:         #EFF6FF;
+  --mea-info-border:     #BFDBFE;
+  --mea-info-text:       #1D4ED8;
+
+}

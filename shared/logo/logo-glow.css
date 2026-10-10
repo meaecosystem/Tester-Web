@@ -1,0 +1,66 @@
+/* ==========================================================================
+   MEA Ecosystem — Logo Glow
+   Efek glow untuk logo SVG (logo-dark.svg / logo-light.svg), dipakai lintas
+   produk. Warna mengikuti token resmi: --mea-accent (#3B82F6).
+
+   Wajib load shared/token/token-color.css SEBELUM file ini, karena semua
+   warna di sini dibaca dari CSS variable token, bukan hardcode.
+
+   Pemakaian:
+   <img src=".../logo-dark.svg" class="logo-glow" alt="MEA Ecosystem">
+   atau langsung di <svg class="logo-glow" ...> kalau logo di-inline.
+   ========================================================================== */
+
+.logo-glow {
+  filter:
+    drop-shadow(0 0 6px var(--mea-accent))
+    drop-shadow(0 0 16px rgba(59, 130, 246, 0.15));
+  transition: filter 0.35s ease, transform 0.35s ease;
+  animation: mea-glow-breathe 4s ease-in-out infinite;
+}
+
+.logo-glow:hover {
+  filter:
+    drop-shadow(0 0 10px var(--mea-accent))
+    drop-shadow(0 0 28px rgba(59, 130, 246, 0.3))
+    drop-shadow(0 0 48px rgba(59, 130, 246, 0.12));
+  transform: scale(1.04);
+  animation-play-state: paused;
+}
+
+/* Napas glow halus — dipakai di logo idle (header, hero) supaya terasa
+   hidup tanpa mengganggu animasi draw-in di mea-logo-loading.css */
+@keyframes mea-glow-breathe {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 6px var(--mea-accent))
+      drop-shadow(0 0 16px rgba(59, 130, 246, 0.15));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 9px var(--mea-accent))
+      drop-shadow(0 0 22px rgba(59, 130, 246, 0.22));
+  }
+}
+
+/* Varian statis (tanpa napas) — untuk tempat kecil/ramai seperti navbar
+   compact atau list item, biar tidak riuh secara visual */
+.logo-glow--static {
+  animation: none;
+  filter:
+    drop-shadow(0 0 4px var(--mea-accent))
+    drop-shadow(0 0 10px rgba(59, 130, 246, 0.12));
+}
+
+.logo-glow--static:hover {
+  filter:
+    drop-shadow(0 0 8px var(--mea-accent))
+    drop-shadow(0 0 18px rgba(59, 130, 246, 0.2));
+}
+
+/* Hormati preferensi pengguna yang sensitif terhadap gerakan */
+@media (prefers-reduced-motion: reduce) {
+  .logo-glow {
+    animation: none;
+  }
+}

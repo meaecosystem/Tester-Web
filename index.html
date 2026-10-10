@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MEA Ecosystem — Hero Height Test (stripped)</title>
+<link rel="icon" type="image/svg+xml" href="./shared/logo/favicon.svg">
+<link rel="stylesheet" href="./shared/token/token-color.css">
+<link rel="stylesheet" href="./shared/logo/logo-glow.css">
+<link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER — sama persis dengan index.html asli MEA Ecosystem.
+     Tombol Akun/ID dibiarkan statis (dropdown tidak difungsikan,
+     karena landing.js tidak di-load di versi stripped ini).
+     ============================================================ -->
+<header class="site-header">
+  <div class="container">
+    <a href="./index.html" class="brand-lockup">
+      <img src="./shared/logo/logo-dark.svg" alt="" class="logo-glow">
+      <span class="brand">MEA Ecosystem</span>
+    </a>
+
+    <div class="header-right">
+      <div class="account-menu" id="accountMenu">
+        <button class="account-trigger" id="accountTrigger" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5"/></svg>
+          Akun
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="lang-menu" id="langMenu">
+        <button class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false">
+          <span id="langTriggerLabel">ID</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO — SAMA PERSIS dengan hero asli MEA Ecosystem.
+     Elemen berat (cube 3D, aurora animasi) DIHAPUS/dijadikan
+     statis sesuai permintaan — hanya struktur & CSS tinggi yang
+     dipertahankan untuk eksperimen.
+     ============================================================ -->
+<section class="hero">
+  <!-- aurora dihapus (elemen dekoratif berat, tidak pengaruh ke tinggi hero) -->
+
+  <div class="hero-content hero-content-split">
+    <div class="hero-search-col">
+      <h1 class="hero-headline">MEA Ecosystem</h1>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>Ekosistem produk digital yang saling terhubung</span>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-box glass" id="searchBox">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" placeholder="Cari alat, produk, fitur..." autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="popular-searches" id="popularSearches">
+          <span class="popular-label">Popular:</span>
+          <a href="#" class="popular-tag">Image Compressor</a>
+          <a href="#" class="popular-tag">Vault</a>
+          <a href="#" class="popular-tag">Attendance</a>
+          <a href="#" class="popular-tag">Quiz</a>
+          <a href="#" class="popular-tag">Workspace</a>
+        </div>
+      </div>
+
+      <div class="hero-actions hero-actions-sm">
+        <button class="btn btn-ghost btn-sm">Jelajahi Ekosistem</button>
+      </div>
+    </div>
+
+    <!-- cube 3D DIHAPUS — diganti placeholder statis kosong supaya
+         struktur grid 2 kolom tetap sama (kalau cube mempengaruhi
+         tinggi/lebar kolom sebelahnya), tapi tanpa animasi/render berat -->
+    <div class="hero-cube-col" aria-hidden="true">
+      <!-- cube statis dihapus untuk eksperimen ringan -->
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span>Gulir</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION KEDUA — galaxy-section, SAMA PERSIS strukturnya,
+     tapi marquee ikon (#bloodflowStage) dibiarkan KOSONG karena
+     butuh bloodflow.js (berat) untuk mengisi — tidak di-load di
+     sini sesuai permintaan "jadiin statis biasa aja".
+     ============================================================ -->
+<section class="galaxy-section section" id="galaxy">
+  <div class="container">
+    <div class="section-head" style="margin: 0 auto 8px; text-align: center; max-width: 560px;">
+      <span class="eyebrow">Jelajah Ekosistem</span>
+      <h2>Jelajahi seluruh ekosistem</h2>
+      <p style="margin-left:auto; margin-right:auto;">Setiap produk MEA adalah bagian dari satu ekosistem yang hidup — ketuk salah satu ikon untuk melihat detail, status, dan versinya.</p>
+    </div>
+  </div>
+
+  <div class="icon-marquee-stage" id="bloodflowStage" style="min-height:120px;">
+    <!-- marquee ikon dihapus (butuh bloodflow.js, berat) -->
+  </div>
+
+  <p class="galaxy-hint">Ketuk ikon untuk melihat detail produk</p>
+</section>
+
+<!-- ============================================================
+     FOOTER — sama persis, tapi tanpa logo animasi JS (CSS-nya
+     tetap jalan karena pure CSS @keyframes, bukan JS)
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-row footer-row-top">
+      <div class="brand-lockup footer-brand">
+        <svg class="footer-logo-animated" viewBox="0 0 210 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect id="footer-box-left" x="24.5" y="30" width="100" height="100" rx="20" fill="none" stroke="var(--mea-accent)" stroke-width="8"/>
+          <path id="footer-box-right" d="M 123.86 45.00 L 173.11 45.17 L 179.35 47.06 L 182.68 49.13 L 185.54 51.81 L 188.98 57.35 L 190.46 63.69 L 190.50 120.00 L 189.82 125.18 L 187.13 131.11 L 183.69 135.04 L 178.15 138.48 L 171.81 139.96 L 112.89 139.83 L 107.85 138.48 L 104.39 136.63 L 101.36 134.14 L 98.18 130.00" fill="none" stroke="var(--mea-accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand" style="font-size:16px;">MEA Ecosystem</span>
+      </div>
+      <div class="footer-copyright">© 2026 MEA Ecosystem. Seluruh hak cipta dilindungi. (stripped test build)</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
