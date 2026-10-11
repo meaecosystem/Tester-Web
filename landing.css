@@ -17,7 +17,7 @@
   --surface-2: var(--mea-surface-raised, #1E1E1E);
   --border:    var(--mea-border, #2A2A2A);
   --border-2:  var(--mea-border-strong, #3A3A3A);
-  --text:      var(--mea-text-primary, #FAFAFA);
+  --text:      var(--mea-text-primary, #dd0202);
   --text-2:    var(--mea-text-secondary, #A1A1A1);
   --text-3:    var(--mea-text-muted, #6B6B6B);
   --accent:    var(--mea-accent, #F59E0B);
