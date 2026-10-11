@@ -20,7 +20,7 @@
   --text:      var(--mea-text-primary, #FAFAFA);
   --text-2:    var(--mea-text-secondary, #A1A1A1);
   --text-3:    var(--mea-text-muted, #6B6B6B);
-  --accent:    var(--mea-accent, #3B82F6);
+  --accent:    var(--mea-accent, #F59E0B);
   --accent-2:  var(--mea-accent-hover, #2563EB);
   --accent-dim: rgba(59, 130, 246, 0.12);
   --green:     var(--mea-success, #22C55E);
