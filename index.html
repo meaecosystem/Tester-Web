@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MEA Ecosystem — Hero Height Test (stripped)</title>
-<link rel="icon" type="image/svg+xml" href="./shared/logo/favicon.svg">
-<link rel="stylesheet" href="./shared/token/token-color.css">
-<link rel="stylesheet" href="./shared/logo/logo-glow.css">
-<link rel="stylesheet" href="./landing.css">
-<style>
-  /* ========================================================
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MEA Ecosystem — Hero Height Test (stripped)</title>
+  <link rel="icon" type="image/svg+xml" href="./shared/logo/favicon.svg">
+  <link rel="stylesheet" href="./shared/token/token-color.css">
+  <link rel="stylesheet" href="./shared/logo/logo-glow.css">
+  <link rel="stylesheet" href="./landing.css">
+  <style>
+    /* ========================================================
      DEBUG COLORS — biar garis batas antar section kelihatan
      jelas banget, tanpa perlu nebak dari gradasi gelap.
-     Dihapus/comment-out kalau sudah tidak dibutuhkan.
+     Dihapus/comment-out kalau sudah tidak dibutuhkan. cek aja
      ======================================================== */
-  .hero{ background: rgba(37, 99, 235, 0.35) !important; } /* biru */
-  .site-header{ background: rgba(234, 179, 8, 0.35) !important; } /* kuning, biar header juga kelihatan batasnya */
-</style>
+    .hero {
+      background: rgba(37, 99, 235, 0.35) !important;
+    }
+
+    /* biru */
+    .site-header {
+      background: rgba(234, 179, 8, 0.35) !important;
+    }
+
+    /* kuning, biar header juga kelihatan batasnya */
+  </style>
 </head>
+
 <body>
 
-<!-- Header dikosongkan total — hanya struktur .container dipertahankan
+  <!-- Header dikosongkan total — hanya struktur .container dipertahankan
      supaya tinggi (64px, dari .site-header .container{height:64px})
      tetap sama persis dengan aslinya. -->
-<header class="site-header">
-  <div class="container"></div>
-</header>
+  <header class="site-header">
+    <div class="container"></div>
+  </header>
 
-<!-- Hero dikosongkan total — hanya <section class="hero"> dipertahankan
+  <!-- Hero dikosongkan total — hanya <section class="hero"> dipertahankan
      (tanpa isi apa pun) supaya min-height:100vh dari CSS tetap bekerja
      dan bisa dibandingkan murni sebagai blok warna. -->
-<section class="hero"></section>
+  <section class="hero"></section>
 
 
 </body>
+
 </html>
